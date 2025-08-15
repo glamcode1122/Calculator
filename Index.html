@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Shedding Planner | South Africa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-bolt"></i> Load Shedding Planner</h1>
+            <p>Optimize your appliance usage during power windows</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="input-section">
+            <div class="location-input">
+                <label for="province"><i class="fas fa-map-marker-alt"></i> Province:</label>
+                <select id="province">
+                    <option value="8">KwaZulu-Natal</option>
+                    <option value="5">Gauteng</option>
+                    <option value="1">Eastern Cape</option>
+                </select>
+                
+                <label for="suburb"><i class="fas fa-home"></i> Suburb:</label>
+                <input type="text" id="suburb" placeholder="Enter your suburb">
+                <button id="searchBtn"><i class="fas fa-search"></i> Get Schedule</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="current-status">
+                <h2><i class="fas fa-charging-station"></i> Current Status</h2>
+                <div class="status-card">
+                    <span id="stage">Stage: Loading...</span>
+                    <span id="nextChange">Next change: --:--</span>
+                </div>
+            </div>
+
+            <div class="schedule">
+                <h2><i class="fas fa-calendar-alt"></i> Today's Schedule</h2>
+                <div id="scheduleContainer">Select your suburb to see schedule</div>
+            </div>
+
+            <div class="appliance-advice">
+                <h2><i class="fas fa-lightbulb"></i> Appliance Recommendations</h2>
+                <div id="applianceTips"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Uses EskomSePush API | &copy; 2025 Load Shedding Planner</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

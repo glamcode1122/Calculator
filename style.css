@@ -1,0 +1,201 @@
+/* styles.css */
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --success: #2ecc71;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary), var(--dark));
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.input-section {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.location-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+label {
+    font-weight: 600;
+    color: var(--dark);
+}
+
+select, input {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+select:focus, input:focus {
+    border-color: var(--secondary);
+    outline: none;
+}
+
+button {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+.results-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+    .results-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .appliance-advice {
+        grid-column: span 2;
+    }
+}
+
+.current-status, .schedule, .appliance-advice {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+h2 {
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.status-card {
+    background: #f8f9fa;
+    border-left: 4px solid var(--secondary);
+    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#scheduleContainer {
+    display: grid;
+    gap: 15px;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent);
+}
+
+.schedule-item.power-on {
+    border-left-color: var(--success);
+}
+
+.appliance-card {
+    background: #e3f2fd;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.appliance-card i {
+    font-size: 1.8rem;
+    color: var(--secondary);
+}
+
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--secondary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+    .location-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    button {
+        width: 100%;
+        justify-content: center;
+    }
+}
